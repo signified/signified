@@ -1,0 +1,18 @@
+---
+title: Contact
+description: Contact Signified.
+---
+
+<form class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4" action="https://formspree.io/f/mzbygyny" method="post">
+  <h1 class="display-1 visually-hidden">{{ page.title }}</h1>
+  <p class="lead text-secondary">{{ page.description }}</p>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" name="_replyto" class="form-control" id="email">
+  </div>
+  <div class="mb-3">
+    <label for="message" class="form-label">Message</label>
+    <textarea name="message" class="form-control" id="message" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-secondary"><i class="bi bi-envelope-fill"></i> Send</button>
+</form>
