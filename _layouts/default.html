@@ -1,11 +1,13 @@
 {%- assign title = site.title -%}
 {%- assign description = site.description -%}
+
 {%- if page.url != '/' -%}
   {%- assign title = page.title | append: ' | ' | append: site.title -%}
   {%- assign description = page.description -%}
 {%- endif -%}
-{%- assign title = title | xml_escape -%}
-{%- assign description = description | xml_escape -%}
+
+{%- assign title = title | escape -%}
+{%- assign description = description | escape -%}
 
 <!doctype html>
 <html lang="en">
@@ -13,15 +15,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ description }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link rel="icon" href="{{ '/assets/img/icon.png' | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1/font/bootstrap-icons.css">
+    <link rel="icon" href="{{ '/assets/img/icon.png' | relative_url }}">
     <title>{{ title }}</title>
   </head>
-  <body class="bg-dark text-light">
-    <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
-      {{ content }}
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+  <body>
+    {{ content }}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

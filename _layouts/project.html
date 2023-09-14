@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<header class="bg-dark text-light py-5">
+  <div class="container">
+    <h1 class="display-1 mb-4">{{ page.title }}</h1>
+    <p class="lead mb-4">{{ page.description }}</p>
+    <a class="d-block d-md-inline btn btn-secondary" href="https://github.com/signified/{{ page.title | downcase }}" target="_blank"><i class="bi-github" role="img" aria-label="Github"></i> View on GitHub</a>
+  </div>
+</header>
+<main class="py-5 prose">
+  <div class="container">
+    {{ content }}
+  </div>
+</main>

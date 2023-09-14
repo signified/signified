@@ -3,14 +3,27 @@ description: Open source software for fun and profit.
 baseurl: ""
 url: "https://signified.com.au"
 
+collections:
+  projects:
+    output: true
+    permalink: /:title
+
 defaults:
   - scope:
-      path: "*"
+      path: ""
+      type: "pages"
     values:
-      layout: default
+      layout: "page"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
 
 exclude:
+  - CNAME
   - Gemfile
   - Gemfile.lock
   - LICENSE
+  - Rakefile
   - README.md
