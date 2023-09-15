@@ -3,22 +3,11 @@ description: Open source software for fun and profit.
 baseurl: ""
 url: "https://signified.com.au"
 
-collections:
-  projects:
-    output: true
-    permalink: /:title
-
 defaults:
   - scope:
-      path: ""
-      type: "pages"
+      path: "*"
     values:
-      layout: "page"
-  - scope:
-      path: ""
-      type: "projects"
-    values:
-      layout: "project"
+      layout: "default"
 
 exclude:
   - CNAME
